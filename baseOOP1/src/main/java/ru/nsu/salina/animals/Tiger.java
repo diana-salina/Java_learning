@@ -7,12 +7,14 @@ public class Tiger extends Animal{
     }
     @Override
     public void swim(int distance) {
-        message = "Тигр проплыл " + distance + " метров";
+        successMessage = "Тигр проплыл " + distance + " метров";
+        failureMessage = "Тигр не может проплыть целых " + distance + " метров";
         super.swim(distance);
     }
     @Override
     public void run(int distance) {
-        message = "Тигр пробежал " + distance + " метров";
+        successMessage = "Тигр пробежал " + distance + " метров";
+        failureMessage = "Тигр не может пробежать целых " + distance + " метров";
         super.run(distance);
     }
 }

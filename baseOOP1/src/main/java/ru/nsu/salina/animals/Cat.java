@@ -10,7 +10,8 @@ public class Cat extends Animal{
     }
     @Override
     public void run(int distance) {
-        message = "Кот пробежал " + distance + " метров";
+        successMessage = "Кот пробежал " + distance + " метров";
+        failureMessage = "Кот не может пробежать целых " + distance + "метров";
         super.run(distance);
     }
 }

@@ -8,12 +8,14 @@ public class Dog extends Animal{
     }
     @Override
     public void run(int distance) {
-        message = "Собака пробежала " + distance + " метров";
+        successMessage = "Собака пробежала " + distance + " метров";
+        failureMessage = "Собака не может пробежать целых " + distance + " метров";
         super.run(distance);
     }
     @Override
     public void swim(int distance) {
-        message = "Собака проплыла " + distance + " метров";
+        successMessage = "Собака проплыла " + distance + " метров";
+        failureMessage = "Собака не может проплыть целых " + distance + " метров";
         super.swim(distance);
     }
 }
