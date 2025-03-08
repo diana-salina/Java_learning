@@ -20,18 +20,9 @@ public class Main {
             Participant currentParticipant = participants[i];
             for (int j = 0; j < obstacles.length; ++j) {
                 Obstacle currentObstacle = obstacles[j];
-                if (currentObstacle instanceof Wall) {
-                    boolean isCompleted = currentParticipant.jump(((Wall) currentObstacle).getHeight());
-                    if (!isCompleted) {
-                        System.out.println("Участник " + currentParticipant.getName() + " не справился с трассой");
-                        break;
-                    }
-                } else if (currentObstacle instanceof Treadmill) {
-                    boolean isCompleted = currentParticipant.run(((Treadmill) currentObstacle).getLenght());
-                    if (!isCompleted) {
-                        System.out.println("Участник " + currentParticipant.getName() + " не справился с трассой");
-                        break;
-                    }
+                if (!currentObstacle.isOvercomed(currentParticipant)) {
+                    System.out.println(currentParticipant.getName() + " не справился с трассой:(");
+                    break;
                 }
             }
         }
