@@ -16,12 +16,10 @@ public class Main {
         Participant[] participants = {new Cat("Кот"),
                 new Robot("Робот"),
                 new Human("Человек")};
-        for (int i = 0; i < participants.length; ++i) {
-            Participant currentParticipant = participants[i];
-            for (int j = 0; j < obstacles.length; ++j) {
-                Obstacle currentObstacle = obstacles[j];
-                if (!currentObstacle.isOvercomed(currentParticipant)) {
-                    System.out.println(currentParticipant.getName() + " не справился с трассой:(");
+        for (Participant participant : participants) {
+            for (Obstacle obstacle : obstacles) {
+                if (!obstacle.isOvercomed(participant)) {
+                    System.out.println(participant.getName() + " не справился с трассой:(");
                     break;
                 }
             }
