@@ -31,14 +31,12 @@ public class Main {
 
 
     }
-    public static <T> void replace(T[] arr, int ind1, int ind2) {
-        T tmp = arr[ind1];
+    public static void replace(Object[] arr, int ind1, int ind2) {
+        Object tmp = arr[ind1];
         arr[ind1] = arr[ind2];
         arr[ind2] = tmp;
     }
     public static <T> ArrayList<T> reverseToList(T[] arr) {
-        ArrayList<T> list = new ArrayList<>(arr.length);
-        list.addAll(Arrays.asList(arr));
-        return list;
+        return new ArrayList<>(Arrays.asList(arr));
     }
 }

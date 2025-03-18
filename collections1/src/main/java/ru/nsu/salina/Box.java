@@ -20,7 +20,7 @@ public class Box<F extends Fruit> {
     }
     public double getWeight() {
         if (fruits.isEmpty()) {
-            return 0;
+            return 0.0f;
         }
         return fruits.getFirst().getWeight() * fruits.size();
     }
@@ -28,6 +28,9 @@ public class Box<F extends Fruit> {
         return this.getWeight() == box.getWeight();
     }
     public void moveTo(Box<F> box) {
+        if (this == box) {
+            return;
+        }
         for (F fruit : fruits) {
             box.add(fruit);
         }
