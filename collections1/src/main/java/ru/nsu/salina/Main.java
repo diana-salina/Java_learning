@@ -1,7 +1,6 @@
 package ru.nsu.salina;
 
 import ru.nsu.salina.fruits.Apple;
-import ru.nsu.salina.fruits.Fruit;
 import ru.nsu.salina.fruits.Orange;
 
 import java.util.ArrayList;
@@ -20,12 +19,12 @@ public class Main {
         System.out.println(list);
 
         System.out.println("### TASK №3 ###");
-        Box<Apple> apples = new Box<>(new Apple(), new Apple(), new Apple());
-        Box<Orange> oranges = new Box<>(new Orange(), new Orange());
+        FruitBox<Apple> apples = new FruitBox<>(new Apple(), new Apple(), new Apple());
+        FruitBox<Orange> oranges = new FruitBox<>(new Orange(), new Orange());
         System.out.println("Яблоки: " + apples.getWeight());
         System.out.println("Апельсины: " + oranges.getWeight());
         System.out.println(apples.compare(oranges));
-        Box<Apple> apples2 = new Box<>();
+        FruitBox<Apple> apples2 = new FruitBox<>();
         apples.moveTo(apples2);
         System.out.println(apples2.compare(apples) + " " + apples2.getWeight() + " " + apples.getWeight());
 

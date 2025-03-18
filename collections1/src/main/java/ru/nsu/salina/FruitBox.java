@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Box<F extends Fruit> {
+public class FruitBox<F extends Fruit> {
     private final List<F> fruits;
-    public Box() {
+    public FruitBox() {
         fruits = new ArrayList<F>();
     }
 
-    public Box(F... fruits) {
+    @SafeVarargs
+    public FruitBox(F... fruits) {
         this.fruits = new ArrayList<>(Arrays.asList(fruits));
     }
     public void add(F fruit) {
@@ -24,10 +25,10 @@ public class Box<F extends Fruit> {
         }
         return fruits.getFirst().getWeight() * fruits.size();
     }
-    public boolean compare(Box<?> box) {
+    public boolean compare(FruitBox<?> box) {
         return this.getWeight() == box.getWeight();
     }
-    public void moveTo(Box<F> box) {
+    public void moveTo(FruitBox<F> box) {
         if (this == box) {
             return;
         }
