@@ -14,7 +14,7 @@ public class Main {
         System.out.println( "ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Подготовка!!!" );
         Race race =  new  Race( new Road( 60 ),  new Tunnel(),  new  Road( 40 ));
         Car[] cars =  new  Car[CARS_COUNT];
-        AtomicReference<Car> winner = new AtomicReference<Car>(null);
+        AtomicReference<Car> winner = new AtomicReference<>(null);
         CompletableFuture[] results = new CompletableFuture[CARS_COUNT];
         for  ( int  i =  0 ; i < cars.length; i++) {
             cars[i] =  new  Car(race,  20  + ( int ) (Math.random() *  10 ), startBarrier);
@@ -31,8 +31,8 @@ public class Main {
         executor.shutdown();
         try {
             startBarrier.await();
-
             System.out.println( "ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!" );
+            startBarrier.await();
             CompletableFuture.allOf(results).join();
             System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
         } catch (Exception e) {
